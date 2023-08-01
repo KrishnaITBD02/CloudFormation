@@ -3,6 +3,8 @@ pipeline {
 
     environment {
         AWS_DEFAULT_REGION = 'us-east-1'
+        AWS_ACCESS_KEY_ID = credentials('AKIASVJTVY6MNN3FEDGC')
+        AWS_SECRET_ACCESS_KEY = credentials('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')
         STACK_NAME = 'test_stack'
         TEMPLATE_FILE = './cloudformation-template.yml'
     }
