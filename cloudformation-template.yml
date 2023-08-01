@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CloudFormation Template to create an S3 bucket
+
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: cloudformationtest
+      AccessControl: Private  # Optional, set the bucket access control (Private, PublicRead, PublicReadWrite, etc.)
+      Tags:
+        - Key: Name
+          Value: MyS3Bucket
+
+Outputs:
+  BucketName:
+    Description: The name of the created S3 bucket
+    Value: !Ref MyS3Bucket
