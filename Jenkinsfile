@@ -11,7 +11,7 @@ pipeline {
         stage('Deploy CloudFormation Stack') {
             steps {
                 script {
-                    sh "aws cloudformation create-stack --stack-name ${STACK_NAME} --template-body file://${TEMPLATE_FILE} --capabilities CAPABILITY_IAM"
+                    sh "aws cloudformation create-stack --stack-name ${STACK_NAME} --template-body file://${TEMPLATE_FILE}"
                 }
             }
         }
