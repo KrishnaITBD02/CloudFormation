@@ -44,8 +44,7 @@ Resources:
       MinSize: 1
       MaxSize: 4  
       DesiredCapacity: 1  
-     # AvailabilityZones:
-      #  - !Ref "AWS::Region" # Deploy the instance in the same region as the template
+      AvailabilityZones: us-east-1 # Deploy the instance in the same region as the template
 
 Outputs:
   InstanceId:
