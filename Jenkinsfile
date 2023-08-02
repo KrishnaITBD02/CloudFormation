@@ -2,24 +2,16 @@ pipeline {
     agent any
 
     environment {
-        AWS_DEFAULT_REGION = 'us-east-1'
-        STACK_NAME = 'test_stack'
-        TEMPLATE_FILE = './cloudformation-template.yml'
- 	AWS_ACCESS_KEY_ID = credentials('SecretId')
-        AWS_SECRET_ACCESS_KEY = credentials('Key')
+        STACK_NAME = 'Test' // Change this to the desired stack name
+        TEMPLATE_FILE = './cloudformation-template.yml' // Change this to the path of your CloudFormation template
     }
 
-   
     stages {
         stage('Deploy CloudFormation Stack') {
             steps {
-                withCredentials([
-                    string(credentialsId: 'MyAWSAccessKeyId', variable: 'AWS_ACCESS_KEY_ID'),
-                    string(credentialsId: 'MyAWSAccessKeySecret', variable: 'AWS_SECRET_ACCESS_KEY')
-                ]) {
-                    script {
-                        sh "aws cloudformation create-stack --stack-name ${STACK_NAME} --template-body file://${TEMPLATE_FILE} --capabilities CAPABILITY_IAM --region ${AWS_DEFAULT_REGION}"
-                    }
+                script {
+                    // Create or update the CloudFormation stack
+                    sh "aws cloudformation deploy --stack-name $STACK_NAME --template-file $TEMPLATE_FILE --region 'us-east-1'"
                 }
             }
         }
