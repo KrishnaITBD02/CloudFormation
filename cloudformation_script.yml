@@ -15,7 +15,8 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       ImageId: ami-022e1a32d3f742bd8
-      SecurityGroups: launch-wizard-20
+      SecurityGroups: 
+      - launch-wizard-20
       KeyName: Splunk_test.pem
 
   #ITBD:
