@@ -15,14 +15,13 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       ImageId: ami-022e1a32d3f742bd8
-      SecurityGroupIds:
-        - !Ref ITBD
+      SecurityGroups: launch-wizard-20
       KeyName: Splunk_test.pem
 
-  ITBD:
-    Type: AWS::EC2::SecurityGroup
-    Properties:
-      GroupId: sg-0cbf89b534d432ac5
+  #ITBD:
+  #  Type: AWS::EC2::SecurityGroup
+  #  Properties:
+  #    GroupId: sg-0cbf89b534d432ac5
   #MyElasticIp:
   #  Type: AWS::EC2::EIP
   #  Properties:
