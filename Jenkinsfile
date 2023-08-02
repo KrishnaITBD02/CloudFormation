@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        STACK_NAME = 'Test' // Change this to the desired stack name
-        TEMPLATE_FILE = './cloudformation-template.yml' // Change this to the path of your CloudFormation template
+        STACK_NAME = 'Splunk' // Change this to the desired stack name
+        TEMPLATE_FILE = './cloudformation_script.yml' // Change this to the path of your CloudFormation template
     }
 
     stages {
