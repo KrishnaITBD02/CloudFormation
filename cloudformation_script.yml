@@ -22,7 +22,7 @@ Resources:
   ITBD:
     Type: AWS::EC2::SecurityGroup
     Properties:
-         GroupId: sg-0cbf89b534d432ac5
+         GroupId: launch-wizard-20
 
   #MyElasticIp:
   #  Type: AWS::EC2::EIP
