@@ -5,7 +5,7 @@ Resources:
   MyS3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: cloudformationtest
+      BucketName: buvketcloudformation
       AccessControl: Private  # Optional, set the bucket access control (Private, PublicRead, PublicReadWrite, etc.)
       Tags:
         - Key: Name
